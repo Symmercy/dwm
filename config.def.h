@@ -13,21 +13,28 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack:size=13" };
 static const char dmenufont[]       = "Hack:size=13";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char col_bestblu[]	    = "#00c8ff";
-static const char col_purple[]	    = "#8e00b5";
+static const char flamingo[]	    = "#f2cdcd";
+static const char mauve[]	    = "#cba6f7";
+static const char red[]	            = "#f38ba8";
+static const char maroon[]	    = "#eba0ac";
+static const char peach[]	    = "#fab387";
+static const char yellow[]	    = "#f9e2af";
+static const char green[]	    = "#a6e3a1";
+static const char base[]	    = "#1e1e2e";
+static const char text []	    = "#cdd6f4";
+static const char col_gray1[]	    = "#222222";
+static const char col_gray2[]	    = "#444444";
+static const char col_gray3[]	    = "#bbbbbb";
+static const char col_gray4[]	    = "#eeeeee";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_bestblu,  col_bestblu  },
+        [SchemeNorm] = { text, base, red },
+	[SchemeSel]  = { base, mauve,  mauve  },
+
 };
 
 /* tagging */
-static const char *tags[] = { ">_", "www", "{}", "*_*", "#" };
+static const char *tags[] = { "", "", "{}", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -65,7 +72,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_bestblu, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", mauve, "-sf", base, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
@@ -98,6 +105,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(			XK_6,			   5)
 	{ MODKEY|ShiftMask,		XK_d,	   spawn,	   SHCMD("shotgun -g $(hacksaw)") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
