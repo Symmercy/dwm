@@ -20,6 +20,7 @@ static const char maroon[]	    = "#eba0ac";
 static const char peach[]	    = "#fab387";
 static const char yellow[]	    = "#f9e2af";
 static const char green[]	    = "#a6e3a1";
+static const char blue[]	    = "#8aadf4";
 static const char base[]	    = "#1e1e2e";
 static const char text []	    = "#cdd6f4";
 static const char col_gray1[]	    = "#222222";
@@ -29,7 +30,7 @@ static const char col_gray4[]	    = "#eeeeee";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
         [SchemeNorm] = { text, base, red },
-	[SchemeSel]  = { base, mauve,  mauve  },
+	[SchemeSel]  = { base, blue,  blue  },
 
 };
 
@@ -72,7 +73,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", mauve, "-sf", base, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", base, "-nf", text, "-sb", blue, "-sf", base, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
@@ -107,6 +108,10 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(			XK_6,			   5)
 	{ MODKEY|ShiftMask,		XK_d,	   spawn,	   SHCMD("shotgun -g $(hacksaw)") },
+	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("firefox") },
+	{ MODKEY|ShiftMask,		XK_l,	   spawn,	   SHCMD("slock") },
+	{ MODKEY|ShiftMask,		XK_j,	   spawn,	   SHCMD("pamixer -d 5") },
+	{ MODKEY|ShiftMask,		XK_k,	   spawn,	   SHCMD("pamixer -i 5") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
