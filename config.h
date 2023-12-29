@@ -11,7 +11,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hack:size=13" };
+static const char *fonts[]          = { "Hack:size=13", "Meslo:size=13"};
 static const char dmenufont[]       = "Hack:size=13";
 static const char flamingo[]	    = "#f2cdcd";
 static const char mauve[]	    = "#cba6f7";
@@ -35,7 +35,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "" };
+static const char *tags[] = { " ", " ", " ", " ", " ", " " };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -112,6 +112,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_l,	   spawn,	   SHCMD("slock") },
 	{ MODKEY|ShiftMask,		XK_j,	   spawn,	   SHCMD("pamixer -d 5") },
 	{ MODKEY|ShiftMask,		XK_k,	   spawn,	   SHCMD("pamixer -i 5") },
+	{ MODKEY|ShiftMask,		XK_z,	   spawn,	   SHCMD("systemctl suspend") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
