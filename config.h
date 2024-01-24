@@ -108,7 +108,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_5,                      4)
 	TAGKEYS(			XK_6,			   5)
 	{ MODKEY|ShiftMask,		XK_d,	   spawn,	   SHCMD("shotgun -g $(hacksaw)") },
-	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("floorp") },
+	{ MODKEY|ShiftMask,		XK_f,	   spawn,	   SHCMD("brave") },
 	{ MODKEY|ShiftMask,		XK_l,	   spawn,	   SHCMD("slock") },
 	{ MODKEY|ShiftMask,		XK_j,	   spawn,	   SHCMD("pamixer -d 5") },
 	{ MODKEY|ShiftMask,		XK_k,	   spawn,	   SHCMD("pamixer -i 5") },
