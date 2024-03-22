@@ -113,7 +113,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_j,	   spawn,	   SHCMD("pamixer -d 5") },
 	{ MODKEY|ShiftMask,		XK_k,	   spawn,	   SHCMD("pamixer -i 5") },
 	{ MODKEY|ShiftMask,		XK_z,	   spawn,	   SHCMD("systemctl suspend") },
-	{ MODKEY,			XK_z,	   spawn,	   SHCMD("st -e vim") },
+	{ MODKEY,			        XK_v,	   spawn,	   SHCMD("st -e vim") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
